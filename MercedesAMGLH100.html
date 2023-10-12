@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/Site.css" type="text/css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <title>Mercedes-AMG Sir Lewis Hamilton 100th Gran Prix Win</title>
+</head>
+<body>
+    <nav class="top_nav">
+        <i class="Fa-Firstdraft" alt="Logo" id="logo">TRVL ART</i>
+        <div id="mySidenav" class="sidenav">
+			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+			<a href="index.html">Home</a>
+			<a href="AboutUs.html">About Us</a>
+			<a href="Catalogue.html">Catalogue</a>
+			<a href="ContactUs.html">Contact Us</a>
+		</div>
+		<span id="hamburger" onclick="openNav()">&#9776;</span>
+
+		<div id="search_bar">
+			<input type="search" placeholder="search..." />
+			<button><i class="fas fa-search"></i></button>
+		</div>
+		<!-- Created a shopping cart button that shows how many items are in the basket. -->
+		<div>
+			<a href="Cart.html" class="button" id="cart-button">
+				<i class="fas fa-shopping-cart" id="cart"></i>
+				<span class="amount-products badge badge-warning carttotal" id="lblCartCount">0</span>
+			</a>
+		</div>
+    </nav>
+
+    <h1>MERCEDES-AMG PETRONAS F1 TEAM - LEWIS HAMILTON 100 GRAND PRIX WINS | COLLECTOR’S EDITION</h1>
+	<img src="images/MercedesAMGPetronasF1Team_LH100.jpg" alt="LH100" class=".img-fluid" id="supportimg" />
+	<p id="supportprice">R1848.00</p>
+	<!-- Added data attributes so that the product buttons will allow for items to be added to the cart. -->
+	<button onclick="addVisualCart(this)" data-name="MERCEDES-AMG PETRONAS F1 TEAM - LEWIS HAMILTON 100 GRAND PRIX WINS | COLLECTOR’S EDITION"
+		data-image="images/MercedesAMGPetronasF1Team_LH100.jpg" data-price="1848.00" class="add-to-cart supportbutton">
+        <i class="fas fa-shopping-cart"></i>
+		Add To Cart
+    </button>
+
+	<h2>Story Behind The Print</h2>
+	<p>Lewis Hamilton continues to rewrite the Formula 1 record books, in terms of victories and championship titles. He overhauled the previous record tally of 91 wins at the 2020 Portuguese GP, the second victory in a string of five more consecutive wins last year, and now 100 wins in Sochi.
+        2021 hasn’t been quite the dream run, but here’s a champion not afraid of some stiff competition. 100 wins, enough said!
+    </p>
+	<ul>
+		<li>The first-ever driver in Formula 1 history to win a 100 Grands Prix, a special celebration of Lewis Hamilton</li>
+		<li>The iconic official image by Mercedes, now in a Collector’s Edition of 1000 pieces</li>
+		<li>Uniquely numbered featuring hot-foil gold embossing</li>
+		<li>Uses the latest 3D modelling technology to design the poster</li>
+        <li>Comes as a standard sized poster, 50 x 70 cm (19¾ x 27½ inch), framing not included</li>
+        <li>Reproduced as a high quality offset print on 175g/m2 paper</li>
+        <li>Global Shipping from South Africa, rolled and delivered in a protective tube</li>
+        <li>Officially Licensed Product | Mercedes-AMG Petronas F1 Team</li>
+	</ul>
+
+    <script type="text/javascript" src="js/Site.js"></script>
+</body>
+</html>
