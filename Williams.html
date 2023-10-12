@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/Site.css" type="text/css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <title>Williams Racing 750 Gran Prix`s in The Sport</title>
+</head>
+<body>
+    <nav class="top_nav">
+        <i class="Fa-Firstdraft" alt="Logo" id="logo">TRVL ART</i>
+        <div id="mySidenav" class="sidenav">
+			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+			<a href="index.html">Home</a>
+			<a href="AboutUs.html">About Us</a>
+			<a href="Catalogue.html">Catalogue</a>
+			<a href="ContactUs.html">Contact Us</a>
+		</div>
+		<span id="hamburger" onclick="openNav()">&#9776;</span>
+
+		<div id="search_bar">
+			<input type="search" placeholder="search..." />
+			<button><i class="fas fa-search"></i></button>
+		</div>
+		<!-- Created a shopping cart button that shows how many items are in the basket. -->
+		<div>
+			<a href="Cart.html" class="button" id="cart-button">
+				<i class="fas fa-shopping-cart" id="cart"></i>
+				<span class="amount-products badge badge-warning carttotal" id="lblCartCount">0</span>
+			</a>
+		</div>
+    </nav>
+
+    <h1>WILLIAMS RACING - 750 GRANDS PRIX | COLLECTOR’S EDITION</h1>
+	<img src="images/Williams_750_CollectorsEdition.jpg" alt="WilliamsRacing" class=".img-fluid" id="supportimg" />
+	<p id="supportprice">R1848.00</p>
+	<!-- Added data attributes so that the product buttons will allow for items to be added to the cart. -->
+	<button onclick="addVisualCart(this)" data-name="WILLIAMS RACING - 750 GRANDS PRIX | COLLECTOR’S EDITION"
+		data-image="images/Williams_750_CollectorsEdition.jpg" data-price="1848.00" class="add-to-cart supportbutton">
+        <i class="fas fa-shopping-cart"></i>
+		Add To Cart
+    </button>
+
+	<h2>Story Behind The Print</h2>
+	<p>The Williams name is inextricably linked with Formula 1 history and even though family involvement has now been relinquished, the squad continues to fight with the ambition of rekindling its glory days. 
+        Fresh investment and a revitalized atmosphere are the perfect tools Williams Racing has in its armoury to re-emerge as a Formula 1 contender once more.
+        This Collector’s Edition captures 3 iconic cars from the history of the team - the first, March-Ford 761, one of the most successful with Nigel Mansell at the wheel of an FW14B and the car representing the current season.  
+    </p>
+	<ul>
+		<li>Specially designed and created on the occasion of Williams’ 750th race, Monaco Grand Prix 2021</li>
+		<li>Exclusive edition of 750 pieces only, uniquely numbered</li>
+		<li>Hot-foil white and silver embossing including the unique 750 Grands Prix logo</li>
+		<li>Uses the latest 3D modelling technology to design the poster</li>
+        <li>Comes as a standard sized poster, 50 x 70 cm (19¾ x 27½ inch), framing not included</li>
+        <li>Reproduced as a high quality offset print on 175g/m2 paper</li>
+        <li>Global Shipping from South Africa, rolled and delivered in a protective tube</li>
+        <li>Officially Licensed Product | Williams Racing</li>
+	</ul>
+
+    <script type="text/javascript" src="js/Site.js"></script>
+</body>
+</html>
