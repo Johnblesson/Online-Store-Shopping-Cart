@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- The styling sheet for the Site  -->
+    <link rel="stylesheet" href="css/Site.css" type="text/css">
+    <!-- The font awesome link for icons and font for the website -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous" />
+    <!-- The jquery link for the site animations rom jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <title>Home</title>
+</head>
+<body>
+    <nav class="top_nav">
+        <i class="Fa-Firstdraft" alt="Logo" id="logo">TRVL ART</i>
+
+        <div id="mySidenav" class="sidenav">
+			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <!-- link for home page -->
+			<a href="index.html">Home</a>
+            <!-- Link for about us page -->
+			<a href="AboutUs.html">About Us</a>
+            <!-- Link for catalogue page -->
+			<a href="Catalogue.html">Catalogue</a>
+            <!-- Link for contact us page -->
+			<a href="ContactUs.html">Contact Us</a>
+		</div>
+        <span id="hamburger" onclick="openNav()">&#9776;</span>
+        <!-- The search bar features a search bar and icon from font awesome for user to search for items -->
+        <div id="search_bar">
+			<input type="search" placeholder="search..." />
+			<button><i class="fas fa-search"></i></button>
+		</div>
+        <!-- Shopping Cart button from font awesome  -->
+		<div>
+			<a href="Cart.html" class="button" id="cart-button">
+				<i class="fas fa-shopping-cart" id="cart"></i>
+				<span class="amount-products badge badge-warning carttotal" id="lblCartCount">0</span>
+			</a>
+		</div>
+    </nav>
+
+    <h1>Welcome to the TRVL ART</h1>
+	<p>We offer a wide variety of automotive prints from Formula 1 history and the some prints have been signed by said driver and organization.
+        Attached to the significant driver. If you have never watched formula "I suggest you watch Drive to Survive"
+    </p>
+	<p>We look forward to assisting you and sharing the history of the sport as well conversing about other Motorsport with a coffee.</p>
+
+    <h2>Customer Reviews:</h2>
+
+	<table class="table table-hover">
+		<tbody id="hometable1">
+			<tr>
+				<th scope="row"><b>Kevin Stroll</b></th>
+				<td>
+					<span class="fa fa-star checked"></span>
+					<span class="fa fa-star checked"></span>
+					<span class="fa fa-star checked"></span>
+					<span class="fa fa-star checked"></span>
+					<span class="fa fa-star checked"></span>
+				</td>
+			</tr>
+			<tr>
+				<th><img src="images/Man.png" alt="Kevin" class="reviewimage">
+				</th>
+				<td id="review1">I visited the store and was happily surprised with the level and detail of the prints
+                    as well as the quality. Also liked that the staff did not treat me any differently in terms of being a new fan of Formula 1
+                    or Motorsport. I purchased the Mercedes-AMG Petronas F1 Team print and this now sits proudly in home office. Great service!!
+                </td>
+			</tr>
+		</tbody>
+	</table>
+	<table class="table table-hover">
+		<tbody id="hometable2">
+			<tr>
+				<th scope="row"><b>Jane Vettel</b></th>
+				<td>
+					<span class="fa fa-star checked"></span>
+					<span class="fa fa-star checked"></span>
+					<span class="fa fa-star checked"></span>
+					<span class="fa fa-star checked"></span>
+					<span class="fa fa-star checked"></span>
+				</td>
+			</tr>
+			<tr>
+				<th><img src="images/Woman.jpg" alt="Jane" class="reviewimage">
+				</th>
+				<td id="review2">Being a formula 1 fan from young age this store was a great delight to view and look back at all the greats of the past as well 
+                    as the future and where Motorsport will be in the near future. I will be telling most of myy friends about the store.
+                    Oh yea I purchased the James Hunt Helmet and it met all my satisfactory needs.
+                </td>
+			</tr>
+		</tbody>
+	</table>
+
+    <script type="text/javascript" src="js/Site.js"></script>
+    
+</body>
+</html>
