@@ -1,0 +1,871 @@
+/* --- Implementing media queries. ---
+/* Container width set for small screens. */
+@media (min-width: 576px) {
+
+    .container-sm,
+    .container {
+      max-width: 540px;
+    }
+}
+  
+/* Container width set for small to medium screens. */
+@media (min-width: 768px) {
+  
+    .container-md,
+    .container-sm,
+    .container {
+      max-width: 720px;
+    }
+}
+  
+/* Container width set for small to large screens. */
+@media (min-width: 992px) {
+  
+    .container-lg,
+    .container-md,
+    .container-sm,
+    .container {
+      max-width: 960px;
+    }
+}
+  
+/* Container width set for small to extra large screens. */
+@media (min-width: 1200px) {
+  
+    .container-xl,
+    .container-lg,
+    .container-md,
+    .container-sm,
+    .container {
+      max-width: 1140px;
+    }
+}
+  
+/* Container width set for small to extra, extra large screens. */
+@media (min-width: 1400px) {
+  
+    .container-xxl,
+    .container-xl,
+    .container-lg,
+    .container-md,
+    .container-sm,
+    .container {
+      max-width: 1320px;
+    }
+}
+  
+/* Table properties set for small screens. */
+@media (max-width: 575.98px) {
+    .table-responsive-sm {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+}
+  
+/* Table properties set for medium screens. */
+@media (max-width: 767.98px) {
+    .table-responsive-md {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+}
+  
+/* Table properties set for large screens. */
+@media (max-width: 991.98px) {
+    .table-responsive-lg {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+}
+  
+/* Table properties set for extra large screens. */
+@media (max-width: 1199.98px) {
+    .table-responsive-xl {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+}
+  
+/* Table properties set for extra, extra large screens. */
+@media (max-width: 1399.98px) {
+    .table-responsive-xxl {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+}
+  
+/* --- Navigation bar --- */
+/* I have set the margin, padding and border to 0 and changed the box-sizing to accomodate the navigation bar. */
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-sizing: border-box;
+}
+  
+/* I have set the navigation bar to display as a grid and adijusted the columns accordingly. I implemented a box shadow and set the area the style and the colour. I have also set background colour and the size (height x width) of the navigation bar. */
+.top_nav {
+    display: grid;
+    grid-template-columns: 1fr 3fr 2fr 1fr;
+    height: 110px;
+    width: 100%;
+    background-color: lightskyblue;
+    box-shadow: inset 0 0 20px black;
+}
+  
+/* Set the size (height x width), the position to fixed, the top padding, the background colour and the transition time. Have also set the z-index so it displays "over" the page and set the top and left values. I have also hid the bottom scrollbar by setting overflow to hidden. */
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #777;
+    box-shadow: inset 0 0 20px black;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+  
+/* Set the side navigation link items to display as a block, added padding, set the transition duration and set the font's size, weight and set the text decoration as none so that the links are shown as plain text. */
+.sidenav a {
+    display: block;
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 500;
+    color: black;
+    transition: 0.3s;
+}
+  
+/* Set the links in the side navigation to change colour once hovered over. */
+.sidenav a:hover {
+    color: white;
+}
+  
+/* Set the position, the margins and the font size of the side navigation's close button. */
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+  
+/* Implemented a media query to make the side navigation adaptable for other screen sizes. */
+@media screen and (max-height: 450px) {
+    .sidenav {
+      padding-top: 15px;
+    }
+  
+    /* I have adjusted the font size of the link list items of the sidenav. */
+    .sidenav a {
+      font-size: 18px;
+    }
+}
+  
+/* Set the hamburger menu item's margins, font size and changed the cursor to a pointer once it is hovered over. */
+#hamburger {
+    margin-left: 80px;
+    margin-top: 30px;
+    font-size: 30px;
+    cursor: pointer;
+}
+  
+/* Set the search bar's margin, padding, background colour and also to float to the right. */
+#search_bar {
+    margin-top: 10px;
+    float: right;
+    background-color: transparent;
+    padding-left: 90px;
+}
+  
+/* Set the search bar's input area and the search button's margins, padding, set the corner's border radius and set the font size. */
+#search_bar input,
+#search_bar button {
+    margin-top: 30px;
+    padding: 5px;
+    border-radius: 4px;
+    font-size: 1.25rem;
+}
+  
+/* Set the search button's size (height x width), the font colour, the background as transparent and set the border style and box-shadow to nothing. I have also changed the cursor to a pointer once it is hovered over.*/
+#search_bar button {
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    border-style: none;
+    box-shadow: none;
+    color: #363636;
+    cursor: pointer;
+}
+  
+/* Adjusted the font size and adjusted the margin so that it is vertically centered. Also set position as absolute.*/
+#cart {
+    position: absolute;
+    font-size: 32px;
+    margin-top: 5px;
+}
+  
+/* Set the position as absolute, the background colour, the vertical alignment, the padding and the margins. I also changed the font colour and the size. */
+#lblCartCount {
+    position: relative;
+    font-size: 14px;
+    background: orangered;
+    color: #fff;
+    padding: 0 5px;
+    vertical-align: top;
+    margin-left: 25px;
+    margin-top: -42px;
+}
+  
+/* Set the padding and the border radius of the cart counter badge. */
+.badge {
+    padding-left: 9px;
+    padding-right: 9px;
+    border-radius: 9px;
+}
+  
+/* Adjusted the size (height x width) and the margins of the logo to fit nicely on the left of the navigation bar. */
+#logo {
+    height: 100px;
+    width: auto;
+    margin-top: 5px;
+    margin-left: 10px;
+}
+  
+/* --- Set page styling --- */
+/* I have set the margins, the text properties, the background fall-back colour, height and width, as well as the padding to accomodate for the page's content. I have also added an animated background, setting the style, the colours, the execution length and speed and the size. */
+html,
+body {
+    margin-right: auto;
+    margin-left: auto;
+    font-family: "Helvetica", "Arial";
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    margin: 0;
+    padding: 0;
+    height: auto;
+    width: 100%;
+    background: linear-gradient(-45deg,
+        #fff,
+        #777);
+    background-size: 150% 150%;
+    animation: gradient 10s ease infinite;
+}
+  
+/* I have set the animation keyframes */
+@keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+  
+    50% {
+      background-position: 100% 50%;
+    }
+  
+    100% {
+      background-position: 0% 50%;
+    }
+}
+  
+/* --- Customized text elements --- */
+/* Set the size of H1 (height x width), the text alignment and decoration, the background colour the margins of the text and added a border and set the size, the style and the colour. */
+h1 {
+    text-align: center;
+    text-decoration: underline;
+    margin: 10px auto 20px auto;
+    height: auto;
+    width: 500px;
+}
+  
+/* Set the text alignment and the bottom margin of the text. */
+h2,
+h3,
+h4,
+p {
+    text-align: center;
+    margin-bottom: 20px;
+}
+  
+/* Set the size (height x width) and the margins of the paragraphs. */
+p {
+    width: 1000px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+  
+/* Set the product prices on the "Catalogue" page's text-alignment and width. */
+.plant p {
+    text-align: center;
+    width: 50px;
+}
+  
+/* Set the product prices on the support pages' text-alignment and width. */
+#supportprice {
+    text-align: center;
+    width: 50px;
+}
+  
+/* --- Catalogue products sections --- */
+/* Set the box sizing to display as a border box. */
+* {
+    box-sizing: border-box;
+}
+  
+/* Set the products container's width and set the margins. */
+#products {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+  
+/* Set the product columns to display as an inline-block, set the size (height x width), the background colour, the padding and flex to auto. I also added a border, setting the style, the colour, the size and the corner radius. */
+.column {
+    display: inline-block;
+    border: 1px solid black;
+    border-radius: 5px;
+    box-shadow: inset 0 0 20px black;
+    padding: 10px;
+    background-color: #e0e0e0;
+    height: auto;
+    width: 25%;
+    flex: 0 0 auto;
+}
+  
+/* Set the product rows to have a flexible display and set flex-wrap to wrap. */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+  
+/* --- Customized image elements --- */
+/* Set the normal images to display as blocks, set the margins, the padding and the background colour. I also added a border, setting the style, the colour, the size and the corner radius. */
+#homeimg,
+.reviewimage
+#handsimg,
+#supportimg,
+.img-thumbnail {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 3px;
+    background-color: #757575;
+}
+  
+/* Set the size (height x width) of the main "Home" image. */
+#homeimg {
+    width: 1000px;
+    height: 750px;
+}
+  
+  
+
+/* Set the size (height x width of the thumbnail images on the "Catalogue" page and added a box-shadow, setting the style, the size and the colour. */
+.img-thumbnail {
+    width: 265px;
+    height: 168px;
+    box-shadow: inset 0 0 20px black;
+}
+  
+/* Applied an opacity filter to activate once the thumnail images are hovered over. */
+.img-thumbnail:hover {
+    opacity: 0.5;
+}
+  
+/* Set the maximum width of the images' fluency and the height for responsiveness. */
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+  
+/* Changed the shapes of the images on the "About Us" page and set this as important so it is forced to be implemented. */
+.rounded-circle,
+.rounded-pill {
+    border-radius: 50% !important;
+}
+  
+/* --- List customization --- */
+/* Set the margins, width and padding of the unordered list. I have also set the position style to appear inside and changed the "bullets" to squares. */
+ul {
+    list-style-type: square;
+    padding: 5px;
+    width: 600px;
+    margin-left: 390px;
+    margin-right: auto;
+    margin-bottom: 20px;
+    list-style-position: inside;
+}
+  
+/* Set the list items' margins, padding and background colour. Also added an opacity filter. */
+ul li {
+    opacity: 75%;
+    background: #e0e0e0;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 10px;
+}
+  
+/* --- Form customization --- */
+/* Set the margins, the size (height x width), the padding and the background colour of the form on the "Contact Us" page. I also added a border and box-shadow, setting the style, the size, the colour and the corner radius. */
+form {
+    border-radius: 5px;
+    box-shadow: inset 0 0 20px black;
+    border: 1px solid black;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: #e0e0e0;
+    width: 650px;
+    height: 930px;
+    padding: 10px;
+}
+  
+/* Set the input areas to display as a block, set the size (height x width), the margins and the padding. Changed the font size, the colour and the weight. I also added a border and box-shadow, setting the colour, the style, the size and the corner radius. */
+.form-control {
+    display: block;
+    width: 500px;
+    height: 40px;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    color: black;
+    background-color: white;
+    border: 1px solid black;
+    box-shadow: inset 0 0 15px black;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+  
+/* Set the text alignment, the colour and the weight. Also set the margins and the line-height. */
+.col-form-label {
+    text-align: left;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 10px;
+    margin-left: 70px;
+    line-height: 1.5;
+}
+  
+/* Set the margins of the radio buttons. */
+.form-check-input[type="radio"] {
+    margin-bottom: 10px;
+    margin-left: 70px;
+}
+  
+/* Set the height of the message input to allow for a longer input. */
+#messageinput {
+    height: 300px;
+}
+  
+/* --- Table customization --- */
+/* Set the margins and the background colour of the table on the "Catalogue" page. Also added a border and box-shadow, setting the style, colour, size and corner radius. */
+.table {
+    border: 1px solid black;
+    border-radius: 5px;
+    box-shadow: inset 0 0 20px black;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    background-color: #e0e0e0;
+}
+  
+/* Set the padding of all table data areas and also added a border, setting the style, the colour and the size. */
+td {
+    border-radius: 5px;
+    border: 1px solid black;
+    padding: 5px 50px;
+}
+  
+/* --- Review tables have been customized --- */
+/* Set the width of the review tables on the "Home/ index" page. */
+#hometable1,
+#hometable2 {
+    width: 100%;
+}
+  
+/* Set the text style, alignment and colour of the review text sections. */
+#review1,
+#review2 {
+    text-align: center;
+    font-style: italic;
+    color: purple;
+}
+  
+/* Set the colours of the review stars. */
+.checked {
+    color: orangered;
+}
+  
+/* --- Button styling --- */
+/* Set the text alignment, weight, size, colour and changed the decoration to none. Set the size (height x width), margins, background colour and padding. Also added a border and box-shadow, setting the style, colour, size and corner radius. */
+.button,
+button,
+#submitorder,
+#clearorder {
+    border: 1px solid #fff;
+    border-radius: 10px;
+    box-shadow: inset 0 0 20px #lightskyblue;
+    text-decoration: none;
+    text-align: center;
+    font-weight: 700;
+    font-size: 1rem;
+    color: #fff;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 150px;
+    height: 50px;
+    background-color: lightskyblue;
+    padding: 10px;
+}
+  
+/* Set for the font colour and weight of buttons to change once hovered over. */
+button:hover {
+    color: lightcoral;
+    font-weight: bold;
+}
+  
+/* Set for the font colour and weight of the "More Details" buttons to change once hovered over separately as they did not change with above styling. */
+.button:hover {
+    color: lightcoral;
+    font-weight: bold;
+}
+  
+/* Set for the font colour, size and weight of the "Confirm Order" buttons to change once hovered over separately as they did not change with above styling. */
+#submitorder:hover {
+    color: lightcoral;
+    font-weight: 800;
+    font-size: 1.1rem;
+}
+  
+/* Set for the font colour, size and weight of the "Clear Cart" buttons to change once hovered over separately as they did not change with above styling. */
+#clearorder:hover {
+    color: lightcoral;
+    font-weight: 800;
+    font-size: 1.1rem;
+}
+  
+/* Set for the "More Details" buttons to float to the left and set the margins. */
+.details {
+    float: left;
+    margin-left: 55px;
+    margin-right: auto;
+}
+  
+/* Set margins for the "add to cart" button on the "Catalogue" page. */
+.add-to-cart {
+    margin-left: 55px;
+    margin-right: auto;
+}
+  
+/* Set margins for the "add to cart" button on the support product pages. */
+.supportbutton {
+    margin-left: 600px;
+    margin-right: auto;
+    margin-bottom: 20px;
+}
+  
+/* Set margins for the "Hide" and "Show" buttons on the "Catalogue" page. */
+#hideorshow {
+    margin-left: 525px;
+    margin-right: auto;
+    margin-bottom: 20px;
+}
+  
+/* Set width and the margins of "Click to see me better" button on "About Us" page. */
+#seeheaderbetter {
+    width: 200px;
+    margin-left: 575px;
+    margin-right: auto;
+}
+  
+/* Set the background colour and box-shadow for the submit buttons. Set the style, colour and size of the box-shadow. */
+.details,
+#formsubmitbutton,
+#updatebutton {
+    background-color: #afafaf;
+    box-shadow: inset 0 0 20px black;
+}
+  
+/* Set the margins for the button on the "Contact Us" page form. */
+#formsubmitbutton {
+    margin-left: 240px;
+    margin-right: auto;
+}
+  
+/* Overrided the button border, box-shadow and background colour by setting it to none and transparent. I have also set the size (height x width), the padding, the left margin, the text colour and set it to float to the left. */
+#cart-button {
+    float: left;
+    padding-left: 60px;
+    padding-top: 35px;
+    margin-left: 30px;
+    width: 40px;
+    height: 30px;
+    background-color: transparent;
+    border-style: none;
+    box-shadow: none;
+    color: #363636;
+}
+  
+/* Set the top margin of the submit and clear button, the size (height x width), background colour, t5he font-weight to bold, floated it to the right and implemented a box-shadow (set the size, colour and style). */
+#submitorder,
+#clearorder {
+    font-weight: bold;
+    background-color: #lightskyblue;
+    box-shadow: inset 0 0 20px #afafaf;
+    margin-left: 20px;
+    width: 200px;
+    height: 50px;
+}
+  
+/* Changed the background colour of the "Clear Cart" button. */
+#clearorder {
+    background-color: #afafaf;
+}
+  
+/* --- Floating box customization --- */
+/* Set the floating boxes' area's size (height x width) and the margins. */
+#floatbox {
+    height: auto;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+  
+/* Set the floating boxes' container to display as an inline-block, set the size (height x width), the bottom margin, the top padding, the background colour and the line height. I also added a border and a box-shadow, setting the style, the colour, the size and the corner radius. */
+.floating-box {
+    display: inline-block;
+    width: 50%;
+    height: auto;
+    margin-bottom: 50px;
+    border-radius: 5px;
+    box-shadow: inset 0 0 20px black;
+    border: 1px solid black;
+    background-color: #e0e0e0;
+    line-height: 1rem;
+    padding-top: 20px;
+}
+  
+/* Set floating boxes' paragraph widths. */
+.floating-box p {
+    width: 100%;
+}
+  
+/* --- Shopping cart page --- */
+/* Set the display to flex, the width, justified the content and aligned the items. I have also set the margins, the padding and added border lines at the top and bottom of the sections, setting the style, colour and the size.*/
+.products {
+    width: 98%;
+    display: flex;
+    justify-content: left;
+    align-items: flex-end;
+    padding: 10px 0px;
+    border-top: 2px solid lightgrey;
+    border-bottom: 2px solid lightgrey;
+    margin-left: auto;
+    margin-right: auto;
+}
+  
+/* Added the underline text decoration to the table headers. */
+.productheader {
+    text-decoration: underline;
+}
+  
+/* Removed the normal borders of the table. */
+.productlist {
+    border: none;
+}
+  
+/* Set the size (height x width) of the cart images. */
+.cartimage {
+    width: 140px;
+    height: auto;
+}
+  
+/* Set the width and the text alignment of the table name column. */
+.product-name {
+    width: 450px;
+    text-align: center;
+}
+  
+/* Set the size (height x width), the background colour and added a border, setting the style, the colour and the size. I have also aligned the text, added padding and set the margin to 0 so that the icons are closer to the "box". */
+#cartquantity {
+    height: 40px;
+    width: 40px;
+    padding: 10px;
+    border: 1px solid black;
+    background-color: white;
+    margin: 0px;
+    text-align: center;
+}
+  
+/* Overrided the button border, box-shadow, margin and background colour by setting it to none and transparent. I have also set the size (height x width) and set the font size. */
+#increasecount,
+#decreasecount {
+    border: none;
+    box-shadow: none;
+    background-color: transparent;
+    margin: 0px;
+    height: 30px;
+    width: 30px;
+    font-size: 20px;
+}
+  
+/* Set the size (height x width) for the remove button. */
+.remove {
+    height: auto;
+    width: 110px;
+}
+  
+/* Set the height and the display to grid and the column frames for the information under the added products on the "Shopping Cart" page. */
+#cartinfo {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    height: 250px;
+}
+  
+/* Removed the border, background and box-shadow by setting them to none and transparent. Also set the height of the form containers and set the font-weight to bold. */
+#formcontainer1,
+#formcontainer2,
+#formcontainer3 {
+    border: none;
+    background-color: transparent;
+    box-shadow: none;
+    height: 280px;
+}
+  
+/* Set the width and the margins of the delivery options form. */
+#formcontainer1 {
+    width: 400px;
+    margin-left: 45px;
+    margin-right: 45px;
+}
+  
+/* Set the font-weight of the label in formcontainer1 to bold.*/
+#formcontainer1 label{
+    font-weight: bold;
+}
+  
+/* Set the width and the left margin of the discount form. */
+#formcontainer2 {
+    width: 280px;
+    margin-left: 5px;
+    font-weight: bold;
+}
+  
+/* Set the width and the margins of the "gift" and totals form. */
+#formcontainer3 {
+    width: 460px;
+    margin-left: 25px;
+    margin-right: 55px;
+    font-weight: bold;
+}
+  
+/* Set the height, the margins and the left-side padding of the discount input section. */
+#discountinput {
+    height: 30px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding-left: 5px;
+}
+  
+/* Set the left margin of the discount section to 0px and set the size (height x width). */
+.discount {
+    margin-left: 0px;
+    height: auto;
+    width: 300px;
+}
+  
+/* Set the left margins of the dropdown and discount labels and for the "Update" button.*/
+#discountlabel,
+#dropdownlabel,
+#updatelabel,
+#updatebutton {
+    margin-left: 10px;
+}
+  
+/* Set the display of the label to flex and the direction to row to have the sentence lines line up. Also set the height and top margin. */
+#updatelabel {
+    display:flex;
+    flex-direction: row;
+    height: 30px;
+    margin-top: 20px;
+}
+  
+/* Set the top margin of the discount "Submit" button.*/
+#discountbutton {
+    margin-top: 5px;
+}
+  
+/* Set the padding, the left margin and the height. */
+#dropdown {
+    padding: 5px;
+    height: 30px;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+  
+/* Set the size (height x width) and the left margin. */
+#collectordelivery,
+#deliveryoptions {
+    height: 80px;
+    width: 400px;
+    margin-left: 10px;
+}
+  
+/* Set the top margin to align the delivery options with the rest of the items. */
+#deliveryoptions {
+    margin-top: 15px;
+}
+  
+/* Ste the spacing between the radio button and the text using the right margin. */
+.radio {
+    margin-right: 5px;
+    margin-bottom: 9.5px;
+}
+  
+/* Set the container to display as a grid and set the frames. Also set the font size, the left margin, the top padding and added a top border (styled, sized, coloured) for the container containing the totals. */
+#finalizeorder {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 10px;
+    border-top: 2px solid black;
+    margin-left: 10px;
+    font-size: 1rem;
+}
+  
+/* Set the total containers to display as a grid and set the frames so that the label and input appear on the same line. */
+.totalcontainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+  
+/* Set the top margin of the vat total section. */
+#vat {
+    margin-top: 6.5px;
+}
+  
+/* Set the top margin of the total section. */
+#total {
+    margin-top: -10px;
+}
+  
+/* Set the font size and weight for the input sections of the totals and made the backgrounds transparent. */
+.totalinput {
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: transparent;
+}
