@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/Site.css" type="text/css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <title>Cart</title>
+</head>
+<body>
+    <nav class="top_nav">
+        <i class="Fa-Firstdraft" alt="Logo" id="logo">TRVL ART</i>
+
+        <div id="mySidenav" class="sidenav">
+			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+			<a href="index.html">Home</a>
+			<a href="AboutUs.html">About Us</a>
+			<a href="Catalogue.html">Catalogue</a>
+			<a href="ContactUs.html">Contact Us</a>
+		</div>
+		<span id="hamburger" onclick="openNav()">&#9776;</span>
+
+		<div id="search_bar">
+			<input type="search" placeholder="search..." />
+			<button><i class="fas fa-search"></i></button>
+		</div>
+		<!-- Created a shopping cart button that shows how many items are in the basket. -->
+		<div>
+			<a href="Cart.html" class="button" id="cart-button">
+				<i class="fas fa-shopping-cart" id="cart"></i>
+				<span class="amount-products badge badge-warning carttotal" id="lblCartCount" onchange="countCart()">0</span>
+			</a>
+		</div>
+    </nav>
+
+    <!-- Created a <div> so that the page can be populated by dynamically created elements. -->
+	<div id="populatecart">
+		<h1>Cart</h1>
+	</div>
+
+    <script type="text/javascript" src="js/Site.js"></script>
+
+    
+</body>
+</html>
