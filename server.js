@@ -4,7 +4,7 @@ require('dotenv').config()
 const path = require('path')
 const hbs = require('hbs')
 const session = require('express-session');
-require('./database/db')
+require('./server/database/db')
 
 // Bulit in Middleware
 app.use(express.json());
@@ -30,7 +30,7 @@ app.use(session({
   }));
 
 // Routes
-const authRoute = require('./routes/authRoute')
+const authRoute = require('./server/routes/authRoute')
 
 // app.use(shoppingRoute)
 app.use(authRoute)
