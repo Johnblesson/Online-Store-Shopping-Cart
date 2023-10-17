@@ -1,8 +1,8 @@
+const bcrypt = require('bcrypt');
+const { body, validationResult } = require('express-validator');
 const User = require('../models/model');
 const Newsletter = require('../models/newsletter');
 const ContactForm = require('../models/contact')
-const { body, validationResult } = require('express-validator');
-const bcrypt = require('bcrypt');
 
     // Sign Up Controller
     exports.signUp = async (req, res) => {
