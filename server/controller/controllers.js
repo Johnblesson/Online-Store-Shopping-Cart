@@ -1,5 +1,59 @@
+const User = require('../models/model');
 const Newsletter = require('../models/newsletter');
 const ContactForm = require('../models/contact')
+const bcrypt = require('bcrypt');
+
+    // Sign Up Controller
+    exports.signUp = async (req, res) => {
+        try {
+            const saltRounds = 10;
+            const hashedPassword = await bcrypt.hash(req.body.password, saltRounds);
+        
+            const data = {
+              username: req.body.username,
+              password: hashedPassword,
+            };
+            
+            await User.insertMany([data]);
+            // res.status(201).json({ msg: 'account created successfully'})
+            res.status(201).render('home')
+        }
+        catch (error) {
+            res.send('An error occurred while signing up.');
+        }
+    }
+
+    // Login Controller
+    exports.logIn = async (req, res) => {
+        try {
+            const user = await User.findOne({ username: req.body.username });
+    
+            if (!user) {
+              return res.send('User not found');
+            }
+            const passwordMatch = await bcrypt.compare(req.body.password, user.password);
+        
+            if (passwordMatch) {
+              req.session.user = user;
+              res.status(201).render('home');
+            } else {
+              res.send('Incorrect password');
+            }
+        }
+        catch  (error) {
+            res.send('An error occurred while logging in.');
+        }
+    }
+
+    // Logout Controller
+    exports.logOut = (req, res) => {
+        req.session.destroy((err) => {
+            if (err) {
+              console.error(err);
+            }
+            res.redirect('/');
+          });
+    }
 
   // Create Newsletter
   exports.createNewsletter = async (req, res) => {

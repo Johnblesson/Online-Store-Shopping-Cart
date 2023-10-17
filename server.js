@@ -30,7 +30,7 @@ app.use(session({
   }));
 
 // Routes
-const authRoute = require('./server/routes/authRoute')
+const authRoute = require('./server/routes/mainRoute')
 
 // app.use(shoppingRoute)
 app.use(authRoute)

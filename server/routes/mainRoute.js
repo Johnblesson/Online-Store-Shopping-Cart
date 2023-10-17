@@ -1,18 +1,25 @@
 const { Router } = require('express');
 const router = Router();
-const User = require('../models/model');
-const bcrypt = require('bcrypt');
+
+// Controllers
+const mainController = require('../controller/controllers')
 const newsletterController = require('../controller/controllers')
 const contactController = require('../controller/controllers')
 
+// Middlewares
 const ensureAuthenticated = require('../middleware/auth')
 const checkFormSubmission = require('../middleware/formAuth')
 
+// Routes
+router.post('/signup', mainController.signUp);
+router.post('/login', mainController.logIn);
+router.get('/logout', mainController.logOut);
 router.post('/newsletter', newsletterController.createNewsletter);
 router.get('/api/v1/newsletter', newsletterController.getNewsletter);
 router.post('/contact_form', contactController.createContact)
 router.get('/api/v1/contact_form', contactController.getContact)
 
+// The Handlebars Hbs Routes
 router.get('/', (req, res) => {
     res.render('login')
 });
@@ -53,52 +60,4 @@ router.get('/forbidden', (req, res) => {
   res.render('403')
 })
 
-router.post('/signup', async(req, res) => {
-    try {
-        const saltRounds = 10;
-        const hashedPassword = await bcrypt.hash(req.body.password, saltRounds);
-    
-        const data = {
-          username: req.body.username,
-          password: hashedPassword,
-        };
-        
-        await User.insertMany([data]);
-        // res.status(201).json({ msg: 'account created successfully'})
-        res.status(201).render('home')
-      } catch (error) {
-        res.send('An error occurred while signing up.');
-      }  
-});
-
-router.post('/login', async(req, res) => {
-    try {
-        const user = await User.findOne({ username: req.body.username });
-    
-        if (!user) {
-          return res.send('User not found');
-        }
-        const passwordMatch = await bcrypt.compare(req.body.password, user.password);
-    
-        if (passwordMatch) {
-          req.session.user = user;
-          res.status(201).render('home');
-        } else {
-          res.send('Incorrect password');
-        }
-      } catch (error) {
-        res.send('An error occurred while logging in.');
-      }
-});
-
-  // Logout route
-  router.get('/logout', (req, res) => {
-    req.session.destroy((err) => {
-      if (err) {
-        console.error(err);
-      }
-      res.redirect('/');
-    });
-  });
-
-  module.exports = router
+module.exports = router
