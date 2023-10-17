@@ -136,7 +136,7 @@ const ContactForm = require('../models/contact')
         const newsletter = new Newsletter({ name, email })
         await newsletter.save();
         // res.status(201).json({ message: 'Newsletter submitted successfully' });
-        res.render('/newsletter-success')
+        res.render('newsletter-success')
       } catch (error) {
         console.error(error);
       res.status(500).json({ error: 'An error occurred while processing the request' });
