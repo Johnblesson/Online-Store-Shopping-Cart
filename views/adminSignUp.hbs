@@ -8,15 +8,23 @@
     <link rel="stylesheet" href="/css/signup.css">
 </head>
 <body>
-    <div class="card">
-<h1>SignUp</h1>
-    <form action="/signup" method="post" >
+<div class="card">
+    <h1>Admin SignUp</h1>
+    <form action="/admin_signup" method="post">
         <input placeholder="Name" name="username" type="text">
         <input placeholder="Password" name="password" type="password">
+        
+        <!-- Dropdown for selecting the role -->
+        <select name="role">
+            <option name="user" value="user">User</option>
+            <option name="admin" value="admin">Admin</option>
+        </select>
+        
         <input class="sub" type="submit">
-    </form><br>
-
-       <a href="/admin_login">Go back to login page</a>
+    </form>
+    <br>
+    <a href="/admin_login">Go back to login page</a>
 </div>
+
 </body>
 </html>

@@ -40,8 +40,48 @@ const bcrypt = require('bcrypt');
               res.send('Incorrect password');
             }
         }
-        catch  (error) {
-            res.send('An error occurred while logging in.');
+        catch (error) {
+            res.send('An error occurred while logging in.', error );
+        }
+    }
+
+    // Admin Sign Up
+    exports.adminSignUp = async (req, res) => {
+        try{
+            const saltRounds = 10;
+            const hashedPassword = await bcrypt.hash(req.body.password, saltRounds);
+        
+            const data = {
+              username: req.body.username,
+              password: hashedPassword,
+              role: req.body.role,
+            };
+            
+            await User.insertMany([data])
+            res.status(201).render('home')
+            // res.status(201).json({ message: 'User registered successfully' });
+        }
+        catch (error) {
+            res.status(500).send('An error occurred while signing up.', error);
+        }
+    }
+
+    // Admin Login
+    exports.adminLogin = async (req, res) => {
+        try {
+            const { username, password } = req.body;
+            const user = await User.findOne({ username });
+          
+            if (user && (await bcrypt.compare(password, user.password))) {
+              req.session.user = user;
+            //   res.json({ message: 'Logged in successfully' });
+            res.render('home')
+            } else {
+              res.status(401).json({ error: 'Authentication failed' });
+            }
+        }
+        catch (error) {
+            res.send('An error occurred while logging in.', error );
         }
     }
 
