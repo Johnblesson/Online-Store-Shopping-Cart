@@ -6,6 +6,7 @@ const newsletterController = require('../controller/controllers')
 const contactController = require('../controller/controllers')
 
 const ensureAuthenticated = require('../middleware/auth')
+const checkFormSubmission = require('../middleware/formAuth')
 
 router.post('/newsletter', newsletterController.createNewsletter);
 router.get('/api/v1/newsletter', newsletterController.getNewsletter);
@@ -17,34 +18,38 @@ router.get('/', (req, res) => {
 });
 
 router.get('/signup', (req, res) => {
-    res.render('signup')
+    res.render('signup');
 });
 
 router.get('/home', ensureAuthenticated, (req, res) => {
-    res.render('home')
+    res.render('home');
 });
 
 router.get('/cart', ensureAuthenticated, (req, res) => {
-    res.render('cart')
+    res.render('cart');
 });
 
 router.get('/checkout', ensureAuthenticated, (req, res) => {
-    res.render('checkout')
+    res.render('checkout');
 });
 
 router.get('/detail', ensureAuthenticated, (req, res) => {
-    res.render('detail')
+    res.render('detail');
 })
 
 router.get('/shop', ensureAuthenticated, (req, res) => {
-    res.render('shop')
+    res.render('shop');
 })
 
 router.get('/contact', ensureAuthenticated, (req, res) => {
-    res.render('contact')
+    res.render('contact');
 })
 
-router.get('/forbidden', ensureAuthenticated, (req, res) => {
+router.get('/contact-success', checkFormSubmission, (req, res) => {
+  res.render('contact-success');
+})
+
+router.get('/forbidden', (req, res) => {
   res.render('403')
 })
 

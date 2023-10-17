@@ -36,7 +36,14 @@ const ContactForm = require('../models/contact')
         const { name, email, subject, message } = req.body;
         const contact = new ContactForm({ name, email, subject, message })
         await contact.save();
-        res.status(201).json({ message: 'Contact form submitted successfully' });
+        // res.status(201).json({ message: 'Contact form submitted successfully' });
+        // res.render('contact-success')
+
+    // Set a session variable to indicate successful form submission
+    req.session.formSubmitted = true;
+
+    // Redirect to the success page
+    res.redirect('/contact-success');
     }
     catch (error) {
         console.error(error);
