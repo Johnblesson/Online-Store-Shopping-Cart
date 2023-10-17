@@ -1,10 +1,12 @@
 const { Router } = require('express');
 const router = Router();
 const User = require('../models/model');
-const Newsletter = require('../models/newsletter')
 const bcrypt = require('bcrypt');
-
+const newsletterController = require('../controller/controllers')
 const ensureAuthenticated = require('../middleware/auth')
+
+router.post('/newsletter', newsletterController.createNewsletter);
+router.get('/api/v1/newsletter', newsletterController.getNewsletter);
 
 router.get('/', (req, res) => {
     res.render('login')
@@ -89,19 +91,5 @@ router.post('/login', async(req, res) => {
       res.redirect('/');
     });
   });
-
-  // Newsletter Route
-  router.post('/newsletter', async (req, res) => {
-    try{
-      const { name, email } = req.body;
-      const newsletter = new Newsletter({ name, email })
-      await newsletter.save();
-      // res.status(201).json({ message: 'Newsletter submitted successfully' });
-      res.redirect('/home')
-    } catch (error) {
-      console.error(error);
-    res.status(500).json({ error: 'An error occurred while processing the request' });
-    }
-  })
 
   module.exports = router
