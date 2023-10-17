@@ -3,10 +3,14 @@ const router = Router();
 const User = require('../models/model');
 const bcrypt = require('bcrypt');
 const newsletterController = require('../controller/controllers')
+const contactController = require('../controller/controllers')
+
 const ensureAuthenticated = require('../middleware/auth')
 
 router.post('/newsletter', newsletterController.createNewsletter);
 router.get('/api/v1/newsletter', newsletterController.getNewsletter);
+router.post('/contact_form', contactController.createContact)
+router.get('/api/v1/contact_form', contactController.getContact)
 
 router.get('/', (req, res) => {
     res.render('login')
