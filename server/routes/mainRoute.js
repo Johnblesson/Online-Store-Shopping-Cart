@@ -70,8 +70,16 @@ router.get('/contact-success', checkFormSubmission, (req, res) => {
   res.render('contact-success');
 })
 
+router.get('/newsletter-success', checkFormSubmission, (req, res) => {
+  res.render('newsletter-success');
+})
+
 router.get('/forbidden', (req, res) => {
   res.render('403')
+})
+
+router.get('/not_admin', (req, res) => {
+  res.render('notAdmin')
 })
 
 module.exports = router

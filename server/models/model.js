@@ -4,15 +4,17 @@ const userSchema = new mongoose.Schema({
     username: {
         type: String,
         require: true,
+        // maxLength: 6,
     },
     password: {
         type: String,
         require: true,
+        // maxLength: 6,
     },
     role: {
         type: String,
         enum: ['user', 'admin'], // Define the allowed roles
-        default: 'admin', // Set the default role to 'admin'
+        default: 'user', // Set the default role to 'admin'
         required: false,
       },
 })
