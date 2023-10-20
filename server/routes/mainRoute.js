@@ -2,7 +2,8 @@ const { Router } = require('express');
 const router = Router();
 
 // Controllers
-const mainController = require('../controller/controllers')
+const userController = require('../controller/userController')
+const adminController = require('../controller/adminController')
 const newsletterController = require('../controller/controllers')
 const contactController = require('../controller/controllers')
 
@@ -13,15 +14,15 @@ const isAdmin = require('../middleware/adminAuth')
 const isAuthenticated = require('../middleware/isAuth')
 
 // Routes
-router.post('/signup', mainController.signUp);
-router.post('/login', mainController.logIn);
-router.get('/logout', mainController.logOut);
+router.post('/signup', userController.signUp);
+router.post('/login', userController.logIn);
+router.get('/logout', userController.logOut);
 router.post('/newsletter', newsletterController.createNewsletter);
 router.post('/contact_form', contactController.createContact);
 router.get('/api/v1/newsletter', isAuthenticated, isAdmin, newsletterController.getNewsletter);
 router.get('/api/v1/contact_form', isAuthenticated, isAdmin, contactController.getContact);
-router.post('/admin_signup', mainController.adminSignUp);
-router.post('/admin_login', mainController.adminLogin);
+router.post('/admin_signup', adminController.adminSignUp);
+router.post('/admin_login', adminController.adminLogin);
 
 // Protected route for admins
 router.get('/admin_login', (req, res) => {
