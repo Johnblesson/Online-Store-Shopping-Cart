@@ -10,6 +10,12 @@ const User = require('../models/model')
     return res.status(400).json({ errors: errors.array() });
   }
 
+   // Create a session
+   req.session.user = {
+    // Other user information
+    isSignedUp: true
+   };
+
   try {
     const saltRounds = 10;
     const hashedPassword = await bcrypt.hash(req.body.password, saltRounds);

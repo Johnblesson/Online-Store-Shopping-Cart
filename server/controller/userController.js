@@ -9,6 +9,12 @@ const User = require('../models/model');
     if (!errors.isEmpty()) {
       return res.status(400).json({ errors: errors.array() });
     }
+
+    // Create a session
+    req.session.user = {
+      // Other user information
+      isSignedUp: true
+    };
   
     try {
       const saltRounds = 10;

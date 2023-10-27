@@ -1,5 +1,5 @@
 function ensureAuthenticated(req, res, next) {
-    if (req.session.user) {
+  if (req.session.user && req.session.user.isSignedUp) {
       // User is authenticated, allow them to proceed
       next();
     } else {
