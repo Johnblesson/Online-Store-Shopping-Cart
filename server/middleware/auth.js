@@ -1,5 +1,5 @@
 function ensureAuthenticated(req, res, next) {
-  if (req.session.user && req.session.user.isSignedUp) {
+  if (req.session.user) {
       // User is authenticated, allow them to proceed
       next();
     } else {
@@ -9,3 +9,4 @@ function ensureAuthenticated(req, res, next) {
   }
 
   module.exports = ensureAuthenticated;
+  

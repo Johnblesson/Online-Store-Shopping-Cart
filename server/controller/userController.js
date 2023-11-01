@@ -13,7 +13,8 @@ const User = require('../models/model');
     // Create a session
     req.session.user = {
       // Other user information
-      isSignedUp: true
+      isSignedUp: true,
+      isLogin: true,
     };
   
     try {
